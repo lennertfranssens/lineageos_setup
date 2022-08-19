@@ -37,6 +37,12 @@ export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
 grep -qF 'ccache -M 50G' ~/.bashrc || echo 'ccache -M 50G' >> ~/.bashrc
 
+# make symbolic link to python3
+sudo ln -s /usr/bin/python3 /usr/bin/python
+
+# update environment
+source ~/.profile
+
 cd ~/android/lineage
 repo init -u https://github.com/LineageOS/android.git -b lineage-19.1
 repo sync
